@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Clike">
 	<select id="getCategory" resultType="Category">
-		select * from category order by cno
+		select cno||',' cno, main, sub from category order by cno
 	</select>
 	<select id="getClike" parameterType="String" resultType="Clike">
 		select * from clike where mid=#{mid}

@@ -1,13 +1,13 @@
 package com.tj.test06.dto;
 
 public class Category {
-	private int cno;
+	private String cno;
 	private String main;
 	private String sub;
-	public int getCno() {
+	public String getCno() {
 		return cno;
 	}
-	public void setCno(int cno) {
+	public void setCno(String cno) {
 		this.cno = cno;
 	}
 	public String getMain() {

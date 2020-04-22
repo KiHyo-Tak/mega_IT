@@ -25,7 +25,7 @@
 	${mylist }
 	<c:set var="mainTemp" value=""/>
 	<c:forEach items="${catgoryList }" var="category">
-		<c:set var="cno" value='${category.cno+", " }'/>
+		<c:set var="cno" value="${category.cno }"/>
 		<!--  cno를 "1, " 같은 스트링 형식으로 -->
 		<c:if test="${mainTemp !=category.main   }">
 			<h1>${category.main }</h1>
