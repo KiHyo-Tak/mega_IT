@@ -23,7 +23,7 @@ insert into category values (category_sq.nextval, '개발','재테크');
 insert into category values (category_sq.nextval, '개발','IT');
 insert into category values (category_sq.nextval, '일상','요가');
 insert into category values (category_sq.nextval, '일상','요리');
-select * from category order by cno;
+select cno||',' cno, main, sub from category order by cno;
 -- 좋아요
 create table clike(
     clno number(8) primary key,

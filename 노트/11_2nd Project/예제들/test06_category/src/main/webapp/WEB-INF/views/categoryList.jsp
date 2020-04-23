@@ -11,18 +11,22 @@
 	<style>
 		button{margin: 10px;}
 		.selected {border: 1px solid red;}
-		.unselected {border: 1px solid blue;}
+		.unselected {}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			
+			$('.selected ').click(function(){
+				alert('카테고리 선택을 해제해요');
+			});
+			$('.unselected ').click(function(){
+				alert('카테고리 선택해요');
+			});
 		});
 	</script>
 </head>
 <body>
-	${catgoryList }
-	${mylist }
+	<h2>빨간색은 선택된 카테고리</h2>
 	<c:set var="mainTemp" value=""/>
 	<c:forEach items="${catgoryList }" var="category">
 		<c:set var="cno" value="${category.cno }"/>
@@ -30,8 +34,10 @@
 		<c:if test="${mainTemp !=category.main   }">
 			<h1>${category.main }</h1>
 		</c:if>
-		<button><c:if test="${mylist.indexOf(cno) != -1}"> ${category.sub }</c:if>
-		 <c:if test="${mylist.indexOf(cno) eq -1}"> ${category.sub } 아님</c:if>
+		<button
+			<c:if test="${mylist.indexOf(cno) != -1}"> class="selected" </c:if>
+		 	<c:if test="${mylist.indexOf(cno) eq -1}"> class="unselected"</c:if>
+		>${category.sub }
 		</button>
 		<c:set var="mainTemp" value="${category.main }"/>	
 	</c:forEach>
