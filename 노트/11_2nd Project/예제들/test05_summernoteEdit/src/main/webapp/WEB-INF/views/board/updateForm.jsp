@@ -69,7 +69,7 @@
 				<td>
 					<input type="text" class="bfile btn" size="100" value="${updateDto.bfile}">
 					<label for="bfile"><img src="${conPath }/img/upload.png"></label>
-					<input type="file" id="bfile" name="tempBfile">
+					<input type="file" id="bfile" name="tempBfile" style="display: none;">
 				</td>
 			</tr>
 			<tr>
