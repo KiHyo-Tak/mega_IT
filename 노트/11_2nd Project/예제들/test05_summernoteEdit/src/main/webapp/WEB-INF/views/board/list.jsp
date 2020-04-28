@@ -39,7 +39,7 @@
 		</script>
 	</c:if>
 	<div class="paging">
-	<form action="">
+	<form action="${conPath }/list.do">
 		<select name="schItem">
 			<option value="">검색조건</option>
 			<option value="btitle"

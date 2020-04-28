@@ -21,7 +21,7 @@
 	    <if test="schItem=='bcontent'">
 	    	(SELECT * FROM B WHERE BCONTENT LIKE '%' || #{schWord} || '%'
 	    </if>
-	    <if test="schItem=='btitlebcontent'">
+	    <if test="schItem=='all'">
 	    	(SELECT * FROM B WHERE BTITLE LIKE '%' || #{schWord} || '%' OR BCONTENT LIKE '%' || #{schWord} || '%'
 	    </if>
 	   ORDER BY BNO DESC) A ) WHERE RN BETWEEN #{startRow} AND #{endRow}
