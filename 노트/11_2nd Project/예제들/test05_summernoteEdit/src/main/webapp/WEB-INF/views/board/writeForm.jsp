@@ -34,14 +34,13 @@
 </script>
 </head>
 <body>
-	<form action="${conPath }/write.do"  method="post" enctype="multipart/form-data">
+	<form action="${conPath }/write.do" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<th>글제목</th>
-				<td><input type="text" name="btitle" required="required"></td>
+				<th>글제목</th><td><input type="text" name="btitle"></td>
 			</tr>
 			<!-- <tr><th>글본문</th>
-				<td><textarea rows="5" cols="32" name="bcontent" id="bcontent"></textarea>
+				<td><textarea rows="5" cols="32" name="bcontent" id="bcontent">${updateDto.bcontent}</textarea>
 		</tr> -->
 		<tr><th>글본문</th>
 		 <th>
@@ -52,11 +51,10 @@
 				        height: 300,
 				        minHeight: null,
 				        maxHeight: null,
-				        lang : 'ko-KR',
+				        lang : 'ko-KR'/* ,
 				        onImageUpload: function(files, editor, welEditable) {
 				                sendFile(files[0], editor, welEditable);
-				            }
-
+				            } */
 				    });
 			 });
 		 </script>
@@ -64,12 +62,17 @@
 		 </tr>
 			<tr>
 				<th>첨부파일</th>
-				<td><input type="text" class="bfile" class="btn"> &nbsp;
-						<label for="bfile"><img src="${conPath }/img/upload.png"></label>
-						<input type="file" id="bfile" name="tempBfile" style="display: none;">
+				<td>
+					<input type="text" class="bfile btn" size="100">
+					<label for="bfile"><img src="${conPath }/img/upload.png"></label>
+					<input type="file" id="bfile" name="tempBfile">
+				</td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="글쓰기"></td>
+				<td colspan="2">
+					<input type="submit" value="쓰기" class="btn">
+					<button onclick="location.href='${conPath}/delete.do?pageNum=${param.pageNum}&bno=${detail.bno }'" class="btn">삭제</button>
+				</td>
 			</tr>
 		</table>
 	</form>

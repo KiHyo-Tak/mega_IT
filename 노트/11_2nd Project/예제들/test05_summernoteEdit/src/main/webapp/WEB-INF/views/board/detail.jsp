@@ -21,7 +21,7 @@ ondragstart="return false" onselectstart="return false">
 	<table>
 		<tr><th>글제목</th><td>${detail.btitle }</td></tr>
 		<tr><th>글내용</th>
-				<td><div>${detail.bcontent }</div></td>
+				<td><div><pre>${detail.bcontent }</pre></div></td>
 		</tr>
 		<tr><th>첨부파일</th>
 				<td>

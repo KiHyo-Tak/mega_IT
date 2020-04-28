@@ -10,21 +10,17 @@
 	<title>Insert title here</title>
 	<link href="${conPath}/css/style.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<c:if test="${not empty writeResult }">
+	<%-- <c:if test="${not empty writeResult }">
 		<script>
 			opener.location.href = '${conPath}/list.do';
 			window.close();
-		</script>
-	</c:if>
+		</script> 
+	</c:if>--%>
 	<script>
 		$(document).ready(function() {
-			$('#writeForm').click(function(){
+			/* $('#writeForm').click(function(){
 				window.open('${conPath }/writeForm.do','','width=600, height=700, left=100');
-			});
-			$('#reload').change(function(){
-				alert('다시 해야지');
-				location.href = '${conPath}/list.do';
-			});
+			}); */
 		});
 		function trClicked(bno){
 			location.href='${conPath}/detail.do?bno='+bno+'&pageNum='+${paging.currentPage};
@@ -61,7 +57,7 @@
 	</form>
 	</div>
 	<table>
-		<tr><td colspan="2"><%-- ★★★ <a href="${conPath }/writeForm.do"> --%><span id="writeForm">글쓰기</span><!-- ★★★</a> --></td></tr>
+		<tr><td colspan="2"><a href="${conPath }/writeForm.do"><span id="writeForm">글쓰기</span></a></td></tr>
 		<tr>
 			<th>글번호</th>
 			<th>글제목</th>

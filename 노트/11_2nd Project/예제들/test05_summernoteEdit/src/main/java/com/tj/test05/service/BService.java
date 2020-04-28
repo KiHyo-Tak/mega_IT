@@ -10,7 +10,7 @@ import com.tj.test05.dto.B;
 
 public interface BService {
 	public List<B> list(B b, String pageNum, Model model);
-	public int write(MultipartHttpServletRequest mRequest, B b);
+	public int write(MultipartHttpServletRequest mRequest, B b, Model model);
 	public B detail(int bno);
 	public int update(MultipartHttpServletRequest mRequest, Model model);
 	public int delete(int bno, Model model);

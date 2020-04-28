@@ -13,6 +13,11 @@ import com.tj.test05.service.Paging;
 public class BController {
 	@Autowired
 	private BService bService;
+	@RequestMapping(value="test")
+	public String test() {
+		
+		return "productRegister11";
+	}
 	@RequestMapping(value="list")
 	public String list(Model model, B b, String pageNum) {
 		model.addAttribute("list", bService.list(b, pageNum, model));
@@ -24,7 +29,7 @@ public class BController {
 	}
 	@RequestMapping(value="write", method = RequestMethod.POST)
 	public String write(B b, MultipartHttpServletRequest mRequest, Model model) {
-		model.addAttribute("writeResult",bService.write(mRequest, b));
+		bService.write(mRequest, b, model);
 		return "forward:list.do";
 	}
 	@RequestMapping(value="detail", method = RequestMethod.GET)

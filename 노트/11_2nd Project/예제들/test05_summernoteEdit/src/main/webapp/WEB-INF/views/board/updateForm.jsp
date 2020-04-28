@@ -55,11 +55,10 @@
 				        height: 300,
 				        minHeight: null,
 				        maxHeight: null,
-				        lang : 'ko-KR',
+				        lang : 'ko-KR'/* ,
 				        onImageUpload: function(files, editor, welEditable) {
 				                sendFile(files[0], editor, welEditable);
-				            }
-
+				            } */
 				    });
 			 });
 		 </script>
@@ -68,15 +67,15 @@
 			<tr>
 				<th>첨부파일</th>
 				<td>
-					<input type="text" class="bfile" class="btn" value="${updateDto.bfile}">
+					<input type="text" class="bfile btn" size="100" value="${updateDto.bfile}">
 					<label for="bfile"><img src="${conPath }/img/upload.png"></label>
-					<input type="file" id="bfile" name="tempBfile" style="display:none;">
+					<input type="file" id="bfile" name="tempBfile">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="수정" class="btn">
-					<input type="button" value="삭제" class="btn">
+					<button onclick="location.href='${conPath}/delete.do?pageNum=${param.pageNum}&bno=${detail.bno }'" class="btn">삭제</button>
 				</td>
 			</tr>
 		</table>
