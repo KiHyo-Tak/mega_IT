@@ -12,25 +12,29 @@
 		$(document).ready(function() {
 			$('.sub').css('display','none');
 			
-			$('.p').each(function(index, item){
+			/* $('.no').each(function(index, item){
 				$(this).click(function(){
 					$('#sub'+index).toggle();
 				});
-			});
-			
-			/* $('.p').click(function(){
-				$('.sub').toggle();
 			}); */
+
+			$('.no').each(function(index, item){
+				$(this).click(function(){
+					$(this).siblings('.sub').toggle();
+				});
+			});
 		});
 	</script>
 </head>
 <body>
 	<c:set var="i" value="0"/>
 	<c:forEach items="${list }" var="p">
-		<div class="p">${p.id }</div>
-		<div class="sub" id="sub${i }">${p.name } - ${p.address }</div>
-		<c:set var="i" value="${i+1 }"/>
+		<div>
+			<div class="no">${p.bNo }</div>
+			<div class="sub" id="sub${i }">${p.bNo } - ${p.bTitle }</div>
+			<c:set var="i" value="${i+1 }"/>
 		<br><br><br>
+		</div>
 	</c:forEach>
 </body>
 </html>
